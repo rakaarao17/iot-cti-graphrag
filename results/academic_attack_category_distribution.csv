@@ -1,0 +1,6 @@
+Academic_Category,Total_Flows,Total_Bandwidth_Bytes
+Volumetric Availability Attack,2720674,15358722466.0
+Benign Baseline,1527212,1195035895.0
+Reconnaissance & Discovery,690534,996873655.0
+Exploitation & Application Layer,464497,1338249909.0
+Botnet Operation (C&C/Propagation),105151,3578258946.0

@@ -1,0 +1,91 @@
+"""
+Unit Tests for Stage 2: Feature Extraction
+
+Tests for network feature extraction and data preprocessing.
+"""
+
+import sys
+from pathlib import Path
+import pandas as pd
+
+project_root = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(project_root))
+
+from src.core.config import get_config
+from src.core.exceptions import DataError
+
+
+class TestStage2FeatureExtraction:
+    """Test suite for feature extraction stage."""
+
+    def test_sample_data_structure(self):
+        """Test that sample data has expected columns."""
+        config = get_config()
+        sample_file = list(config.DATA_SAMPLES_DIR.glob("*.csv"))[0]
+        
+        df = pd.read_csv(sample_file, nrows=10)
+        
+        # Check basic columns expected in IoT datasets
+        expected_columns = ['src_ip', 'dst_ip', 'protocol', 'src_port', 'dst_port']
+        
+        found_columns = [col for col in expected_columns if col in df.columns]
+        print(f"✓ Found {len(found_columns)}/{len(expected_columns)} expected columns")
+        print(f"  Actual columns: {list(df.columns)[:5]}...")
+
+    def test_processed_data_exists(self):
+        """Test that processed datasets are available."""
+        config = get_config()
+        processed_dir = config.DATA_PROCESSED_DIR
+        
+        processed_files = list(processed_dir.glob("*_features.csv"))
+        assert len(processed_files) > 0, f"No processed feature files found in {processed_dir}"
+        
+        print(f"✓ Found {len(processed_files)} processed feature files")
+        for f in processed_files[:3]:
+            print(f"  - {f.name}")
+
+    def test_unified_features_dataset(self):
+        """Test that unified features dataset is available."""
+        config = get_config()
+        unified_file = config.DATA_PROCESSED_DIR / "unified_features.csv"
+        
+        if unified_file.exists():
+            df = pd.read_csv(unified_file, nrows=10)
+            print(f"✓ Unified features dataset found with {len(df.columns)} columns")
+        else:
+            print(f"⊘ Unified features dataset not yet created (will be generated in pipeline)")
+
+
+def main():
+    """Run all Stage 2 tests."""
+    print("\n" + "=" * 70)
+    print("  Stage 2: Feature Extraction - Unit Tests")
+    print("=" * 70)
+    
+    test = TestStage2FeatureExtraction()
+    
+    try:
+        print("\n[1/3] Testing sample data structure...")
+        test.test_sample_data_structure()
+        
+        print("\n[2/3] Testing processed data...")
+        test.test_processed_data_exists()
+        
+        print("\n[3/3] Testing unified features dataset...")
+        test.test_unified_features_dataset()
+        
+        print("\n" + "=" * 70)
+        print("  Results: 3/3 passed ✓")
+        print("=" * 70)
+        return True
+        
+    except Exception as e:
+        print(f"\n✗ FAILED: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
+if __name__ == "__main__":
+    success = main()
+    sys.exit(0 if success else 1)

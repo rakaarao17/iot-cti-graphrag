@@ -1,0 +1,142 @@
+[
+  {
+    "id": "te-01",
+    "category": "threat_explanation",
+    "query": "Explain the attack behavior observed in these network flows.",
+    "expected_entities": ["DDoS", "UDP", "flood"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "te-02",
+    "category": "threat_explanation",
+    "query": "What type of IoT device is being targeted in this attack and how is it exploited?",
+    "expected_entities": ["IoT", "botnet", "Mirai"],
+    "retrieval_type": "vector"
+  },
+  {
+    "id": "te-03",
+    "category": "threat_explanation",
+    "query": "Describe the communication pattern between the attacker and the compromised devices.",
+    "expected_entities": ["C&C", "TCP", "SYN"],
+    "retrieval_type": "cypher"
+  },
+  {
+    "id": "te-04",
+    "category": "threat_explanation",
+    "query": "What protocol is being abused in this attack and why is it effective against IoT infrastructure?",
+    "expected_entities": ["UDP", "DNS", "flooding"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "is-01",
+    "category": "incident_summary",
+    "query": "Summarise the key events in this security incident from the retrieved network context.",
+    "expected_entities": ["DDoS", "botnet", "reconnaissance"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "is-02",
+    "category": "incident_summary",
+    "query": "When did the attack begin and what were the first indicators of compromise observed?",
+    "expected_entities": ["SYN", "scan", "port"],
+    "retrieval_type": "cypher"
+  },
+  {
+    "id": "is-03",
+    "category": "incident_summary",
+    "query": "Which source IP addresses were involved in the attack and what is their role?",
+    "expected_entities": ["spoofing", "botnet", "C&C"],
+    "retrieval_type": "vector"
+  },
+  {
+    "id": "is-04",
+    "category": "incident_summary",
+    "query": "How many devices were affected and what was the peak attack volume observed?",
+    "expected_entities": ["UDP", "flood", "DDoS"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "ac-01",
+    "category": "attack_classification",
+    "query": "Classify the attack type based on the network flow features in the context.",
+    "expected_entities": ["DDoS", "DoS", "brute force"],
+    "retrieval_type": "vector"
+  },
+  {
+    "id": "ac-02",
+    "category": "attack_classification",
+    "query": "Does this traffic pattern match a known IoT malware family? Identify it from the context.",
+    "expected_entities": ["Mirai", "botnet", "C&C"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "ac-03",
+    "category": "attack_classification",
+    "query": "Is this attack volumetric, protocol-based, or application-layer? Justify using the retrieved data.",
+    "expected_entities": ["UDP", "SYN", "TCP flood"],
+    "retrieval_type": "cypher"
+  },
+  {
+    "id": "ac-04",
+    "category": "attack_classification",
+    "query": "Map the observed attack to a MITRE ATT&CK technique based on the retrieved context.",
+    "expected_entities": ["T1498", "T1595", "reconnaissance"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "aq-01",
+    "category": "analyst_qa",
+    "query": "Is the observed traffic pattern consistent with a brute force credential attack?",
+    "expected_entities": ["brute force", "authentication", "SSH"],
+    "retrieval_type": "vector"
+  },
+  {
+    "id": "aq-02",
+    "category": "analyst_qa",
+    "query": "What defensive action should be taken immediately given this attack profile?",
+    "expected_entities": ["block", "firewall", "rate limit"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "aq-03",
+    "category": "analyst_qa",
+    "query": "Are there any lateral movement indicators in the retrieved network flows?",
+    "expected_entities": ["reconnaissance", "scan", "botnet"],
+    "retrieval_type": "cypher"
+  },
+  {
+    "id": "aq-04",
+    "category": "analyst_qa",
+    "query": "How does this incident compare to typical IoT DDoS attack patterns described in the context?",
+    "expected_entities": ["DDoS", "UDP", "Mirai"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "es-01",
+    "category": "executive_summary",
+    "query": "Provide a brief executive summary of this cybersecurity incident suitable for non-technical stakeholders.",
+    "expected_entities": ["attack", "impact", "IoT"],
+    "retrieval_type": "vector"
+  },
+  {
+    "id": "es-02",
+    "category": "executive_summary",
+    "query": "What is the business impact of this IoT attack based on the retrieved information?",
+    "expected_entities": ["availability", "disruption", "DDoS"],
+    "retrieval_type": "combined"
+  },
+  {
+    "id": "es-03",
+    "category": "executive_summary",
+    "query": "Summarise the threat actor's objectives based on the observed attack behaviour in the context.",
+    "expected_entities": ["botnet", "C&C", "reconnaissance"],
+    "retrieval_type": "cypher"
+  },
+  {
+    "id": "es-04",
+    "category": "executive_summary",
+    "query": "What remediation steps are recommended to prevent recurrence of this type of IoT attack?",
+    "expected_entities": ["patch", "firewall", "monitoring"],
+    "retrieval_type": "combined"
+  }
+]
