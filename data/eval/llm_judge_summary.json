@@ -1,0 +1,24 @@
+{
+  "n_queries": 20,
+  "cypher_only": {
+    "mean": 2.75,
+    "median": 2.5,
+    "min": 1,
+    "max": 5
+  },
+  "vector_only": {
+    "mean": 2.5,
+    "median": 2.0,
+    "min": 1,
+    "max": 5
+  },
+  "combined": {
+    "mean": 3.4,
+    "median": 3.0,
+    "min": 2,
+    "max": 5
+  },
+  "combined_wins_or_ties_vs_cypher": 20,
+  "combined_strictly_beats_cypher": 10,
+  "combined_wins_or_ties_vs_vector": 20
+}
