@@ -93,29 +93,26 @@ def test_embedding_adapter_mock():
         return False
 
 
-def test_stage3_neo4j_connection_v2_import():
-    """Test that stage3's neo4j_connection_v2 can be imported."""
-    print("\n[4/5] Testing stage3 neo4j_connection_v2 import...")
+def test_stage3_neo4j_connection_import():
+    """Test that stage3's neo4j_connection module imports and works."""
+    print("\n[4/5] Testing stage3 neo4j_connection import...")
     if not HAS_NEO4J:
         print(f"  [SKIP] SKIPPED: neo4j package not installed")
         return True  # Skip but don't fail
     
     try:
-        from src.services.knowledge_graph.neo4j_connection_v2 import (
-            get_adapter,
+        from src.services.knowledge_graph.neo4j_connection import (
             verify_connectivity,
-            get_stats,
             run_query,
+            get_database_stats,
         )
         print(f"  [OK] All functions imported successfully")
-        
-        # Test get_adapter
-        adapter = get_adapter()
-        print(f"  [OK] Got adapter: {type(adapter).__name__}")
-        
-        # Test get_stats (should not raise)
+
+        # Test connectivity + stats (should not raise)
         try:
-            stats = get_stats()
+            connected = verify_connectivity()
+            print(f"  [OK] verify_connectivity() = {connected}")
+            stats = get_database_stats()
             print(f"  [OK] Got stats: {stats}")
         except GraphError as e:
             # Expected if Neo4j is not running
@@ -136,7 +133,6 @@ def test_stage6_ollama_client_v2_import():
         from src.services.threat_explanation.ollama_client_v2 import (
             OllamaClient,
             get_adapter,
-            test_ollama,
         )
         print(f"  [OK] All functions imported successfully")
         
@@ -164,7 +160,7 @@ def main():
         test_neo4j_adapter_import(),
         test_ollama_adapter_initialization(),
         test_embedding_adapter_mock(),
-        test_stage3_neo4j_connection_v2_import(),
+        test_stage3_neo4j_connection_import(),
         test_stage6_ollama_client_v2_import(),
     ]
 
