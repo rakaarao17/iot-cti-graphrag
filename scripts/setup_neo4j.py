@@ -1,4 +1,4 @@
-﻿"""
+"""
 Neo4j Setup Helper.
 
 Provides instructions and automation for setting up Neo4j
@@ -25,10 +25,10 @@ def check_java():
         print(f"  Java version: {output.strip().split(chr(10))[0]}")
         return True
     except FileNotFoundError:
-        print("  âœ— Java not found in PATH")
+        print("  [FAIL] Java not found in PATH")
         return False
     except Exception as e:
-        print(f"  âœ— Java check failed: {e}")
+        print(f"  [FAIL] Java check failed: {e}")
         return False
 
 
@@ -36,10 +36,10 @@ def check_neo4j():
     """Check if Neo4j is installed."""
     neo4j_path = shutil.which("neo4j")
     if neo4j_path:
-        print(f"  âœ“ Neo4j found: {neo4j_path}")
+        print(f"  [OK] Neo4j found: {neo4j_path}")
         return True
     else:
-        print("  âœ— Neo4j not found in PATH")
+        print("  [FAIL] Neo4j not found in PATH")
         return False
 
 
@@ -116,31 +116,31 @@ def run_diagnostics():
     print("\n  3. Python Packages:")
     try:
         import neo4j
-        print(f"  âœ“ neo4j package: v{neo4j.__version__}")
+        print(f"  [OK] neo4j package: v{neo4j.__version__}")
     except ImportError:
-        print("  âœ— neo4j package not installed (pip install neo4j)")
+        print("  [FAIL] neo4j package not installed (pip install neo4j)")
 
     try:
         import neo4j_graphrag
-        print(f"  âœ“ neo4j-graphrag package installed")
+        print(f"  [OK] neo4j-graphrag package installed")
     except ImportError:
-        print("  âœ— neo4j-graphrag not installed (pip install neo4j-graphrag[google])")
+        print("  [FAIL] neo4j-graphrag not installed (pip install neo4j-graphrag[google])")
 
     print("\n  4. Neo4j Connection:")
     try:
         from src.services.knowledge_graph.neo4j_connection import verify_connectivity
         verify_connectivity()
     except Exception as e:
-        print(f"  âœ— Connection failed: {e}")
+        print(f"  [FAIL] Connection failed: {e}")
 
     print("\n" + "=" * 60)
 
     if not java_ok:
-        print("\n  âš ï¸  Action Required: Install Java JDK 17+")
+        print("\n    Action Required: Install Java JDK 17+")
         print("     https://adoptium.net/")
 
     if not neo4j_ok:
-        print("\n  âš ï¸  Action Required: Install Neo4j")
+        print("\n    Action Required: Install Neo4j")
         print("     Run this script with --instructions for setup guide")
 
 

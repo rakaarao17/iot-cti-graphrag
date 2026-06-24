@@ -1,4 +1,4 @@
-﻿"""
+"""
 Stage 3: Neo4j Schema Setup.
 
 Creates constraints, indexes, and vector indexes in Neo4j

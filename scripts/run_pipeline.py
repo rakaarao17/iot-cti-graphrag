@@ -168,13 +168,13 @@ def run_all_stages():
 
     # Pipeline summary
     total_elapsed = time.time() - start_time
-    print("\n" + "â•" * 70)
+    print("\n" + "-" * 70)
     print("  PIPELINE EXECUTION SUMMARY")
-    print("â•" * 70)
+    print("-" * 70)
     for num, status in results.items():
         print(f"  Stage {num}: {status}")
     print(f"\n  Total time: {total_elapsed:.1f}s")
-    print("â•" * 70)
+    print("-" * 70)
 
 
 def main():

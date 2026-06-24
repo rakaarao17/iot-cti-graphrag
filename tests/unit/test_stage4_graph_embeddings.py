@@ -1,4 +1,4 @@
-﻿"""
+"""
 Unit Tests for Stage 4: Graph Embeddings
 
 Tests for embedding generation and storage.
@@ -25,7 +25,7 @@ class TestStage4GraphEmbeddings:
         assert config.EMBEDDING_DIMENSION == 384, f"Expected 384-dim embeddings, got {config.EMBEDDING_DIMENSION}"
         assert config.EMBEDDING_BATCH_SIZE > 0, "Batch size must be positive"
         
-        print(f"âœ“ Embedding config: dimension={config.EMBEDDING_DIMENSION}, batch={config.EMBEDDING_BATCH_SIZE}")
+        print(f"[OK] Embedding config: dimension={config.EMBEDDING_DIMENSION}, batch={config.EMBEDDING_BATCH_SIZE}")
 
     def test_mock_embedding_adapter(self):
         """Test mock embedding adapter."""
@@ -37,7 +37,7 @@ class TestStage4GraphEmbeddings:
         assert isinstance(embedding, list), "Embedding should be a list"
         assert all(isinstance(v, (int, float)) for v in embedding), "All embedding values should be numeric"
         
-        print(f"âœ“ Single embedding generated: {len(embedding)} dimensions")
+        print(f"[OK] Single embedding generated: {len(embedding)} dimensions")
 
     def test_mock_batch_embeddings(self):
         """Test batch embedding generation."""
@@ -55,7 +55,7 @@ class TestStage4GraphEmbeddings:
         for i, emb in enumerate(embeddings):
             assert len(emb) == 768, f"Embedding {i} has wrong dimension: {len(emb)}"
         
-        print(f"âœ“ Batch embeddings generated: {len(embeddings)} texts Ã— {len(embeddings[0])} dims")
+        print(f"[OK] Batch embeddings generated: {len(embeddings)} texts x {len(embeddings[0])} dims")
 
     def test_embedding_adapter_stats(self):
         """Test embedding adapter statistics."""
@@ -69,7 +69,7 @@ class TestStage4GraphEmbeddings:
         assert "dimension" in stats, "Stats missing 'dimension'"
         assert "requests" in stats, "Stats missing 'requests'"
         
-        print(f"âœ“ Adapter stats: {stats}")
+        print(f"[OK] Adapter stats: {stats}")
 
     def test_embedding_functions_available(self):
         """Test that embedding functions are available."""
@@ -86,9 +86,9 @@ class TestStage4GraphEmbeddings:
             assert callable(generate_device_descriptions), "generate_device_descriptions not callable"
             assert callable(embed_device_descriptions), "embed_device_descriptions not callable"
             
-            print("âœ“ All embedding functions available")
+            print("[OK] All embedding functions available")
         except ImportError as e:
-            print(f"âŠ˜ Could not import embeddings module: {e}")
+            print(f"[SKIP] Could not import embeddings module: {e}")
 
 
 def main():
@@ -122,12 +122,12 @@ def main():
         passed += 1
         
         print("\n" + "=" * 70)
-        print(f"  Results: {passed}/5 passed âœ“")
+        print(f"  Results: {passed}/5 passed [OK]")
         print("=" * 70)
         return True
         
     except Exception as e:
-        print(f"\nâœ— FAILED: {e}")
+        print(f"\n[FAIL] FAILED: {e}")
         import traceback
         traceback.print_exc()
         return False

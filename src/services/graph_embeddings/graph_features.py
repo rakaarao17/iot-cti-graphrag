@@ -1,4 +1,4 @@
-﻿"""
+"""
 Stage 4: Graph-Structural Feature Extraction.
 
 Extracts structural features from the Knowledge Graph for each device:
@@ -201,7 +201,7 @@ if __name__ == "__main__":
     devices = get_device_feature_vectors()
     print(f"\nTop 10 suspicious devices (by malicious ratio):")
     print(f"{'IP':20s} {'Degree':>8s} {'Mal.Ratio':>10s} {'Diversity':>10s} {'Peers':>8s}")
-    print("â”€" * 60)
+    print("-" * 60)
     for d in devices[:10]:
         print(f"{d['ip']:20s} {d['total_degree']:8d} {d['malicious_ratio']:10.3f} "
               f"{d['attack_diversity']:10d} {d['peer_count']:8d}")

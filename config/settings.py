@@ -87,7 +87,7 @@ logger = logging.getLogger("iot_cti_pipeline")
 def print_config():
     """Print current configuration for verification."""
     print("=" * 70)
-    print("  GraphRAG IoT CTI Pipeline — Configuration")
+    print("  GraphRAG IoT CTI Pipeline - Configuration")
     print("=" * 70)
     print(f"  Project Root:      {PROJECT_ROOT}")
     print(f"  Neo4j URI:         {NEO4J_URI}")

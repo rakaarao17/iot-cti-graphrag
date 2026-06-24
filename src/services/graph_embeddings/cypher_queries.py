@@ -1,4 +1,4 @@
-﻿"""
+"""
 Stage 4: Pre-built Analytical Cypher Queries.
 
 A library of Cypher queries for analyzing the IoT CTI Knowledge Graph,
@@ -226,26 +226,26 @@ def get_graph_summary() -> Dict:
 def print_full_analysis():
     """Print a comprehensive analysis of the knowledge graph."""
     print("\n" + "=" * 70)
-    print("  IoT CTI Knowledge Graph â€” Full Analysis")
+    print("  IoT CTI Knowledge Graph - Full Analysis")
     print("=" * 70)
 
     # Summary
     summary = get_graph_summary()
-    print(f"\n  ðŸ“Š Graph Summary")
-    print(f"  {'â”€' * 50}")
+    print(f"\n   Graph Summary")
+    print(f"  {'-' * 50}")
     for key, value in summary.items():
         print(f"    {key.replace('_', ' ').title():30s} {value:,}")
 
     # Top attackers
-    print(f"\n  ðŸ”´ Top 10 Attackers")
-    print(f"  {'â”€' * 50}")
+    print(f"\n   Top 10 Attackers")
+    print(f"  {'-' * 50}")
     for r in get_top_attackers(10):
         print(f"    {r['ip']:20s} {r['malicious_flows']:6,} flows  "
               f"({r['attack_diversity']} attack types)")
 
     # Attack distribution
-    print(f"\n  âš ï¸  Attack Distribution")
-    print(f"  {'â”€' * 50}")
+    print(f"\n    Attack Distribution")
+    print(f"  {'-' * 50}")
     for r in get_attack_distribution()[:15]:
         print(f"    [{r['severity']:8s}] {r['attack_type']:35s} {r['flow_count']:8,}")
 

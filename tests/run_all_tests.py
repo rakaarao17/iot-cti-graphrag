@@ -5,25 +5,31 @@ Runs all smoke tests, unit tests, and integration tests
 to validate the entire system.
 """
 
+import os
 import sys
 from pathlib import Path
 import subprocess
 
 project_root = Path(__file__).resolve().parent.parent
 
+# Child test files print Unicode status glyphs; force UTF-8 in the subprocess
+# so they don't crash on a default Windows (cp1252) console.
+_CHILD_ENV = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}
+
 
 def run_test_suite(test_file: Path, name: str) -> bool:
     """Run a single test file and return success status."""
-    print(f"\n{'─' * 70}")
+    print(f"\n{'-' * 70}")
     print(f"Running: {name}")
-    print(f"{'─' * 70}")
-    
+    print(f"{'-' * 70}")
+
     result = subprocess.run(
         [sys.executable, str(test_file)],
         cwd=str(project_root),
         capture_output=False,
+        env=_CHILD_ENV,
     )
-    
+
     return result.returncode == 0
 
 
@@ -57,7 +63,7 @@ def main():
             success = run_test_suite(test_file, name)
             results.append((name, success))
         else:
-            print(f"\n⊘ SKIPPED: {name} (file not found: {test_file})")
+            print(f"\n[SKIP] SKIPPED: {name} (file not found: {test_file})")
             results.append((name, None))
     
     # Print summary
@@ -72,14 +78,14 @@ def main():
     
     for name, result in results:
         if result is True:
-            status = "✓ PASS"
+            status = "[PASS]"
         elif result is False:
-            status = "✗ FAIL"
+            status = "[FAIL]"
         else:
-            status = "⊘ SKIP"
+            status = "[SKIP]"
         print(f"  {status}: {name}")
-    
-    print("\n" + "─" * 70)
+
+    print("\n" + "-" * 70)
     print(f"  Total: {passed} passed, {failed} failed, {skipped} skipped out of {total}")
     print("=" * 70)
     

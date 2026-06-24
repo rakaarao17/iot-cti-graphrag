@@ -1,4 +1,4 @@
-﻿"""
+"""
 Unit Tests for Stage 6: Threat Explanation
 
 Tests for LLM-powered threat analysis.
@@ -26,7 +26,7 @@ class TestStage6ThreatExplanation:
         assert config.LLM_TEMPERATURE >= 0, "Temperature must be non-negative"
         assert config.LLM_MAX_TOKENS > 0, "Max tokens must be positive"
         
-        print(f"âœ“ Ollama config: model={config.OLLAMA_MODEL}, endpoint={config.OLLAMA_ENDPOINT}")
+        print(f"[OK] Ollama config: model={config.OLLAMA_MODEL}, endpoint={config.OLLAMA_ENDPOINT}")
 
     def test_ollama_client_v2_import(self):
         """Test that updated Ollama client can be imported."""
@@ -35,9 +35,9 @@ class TestStage6ThreatExplanation:
                 OllamaClient,
                 get_adapter,
             )
-            print("âœ“ OllamaClient v2 imported successfully")
+            print("[OK] OllamaClient v2 imported successfully")
         except ImportError as e:
-            print(f"âœ— Failed to import OllamaClient v2: {e}")
+            print(f"[FAIL] Failed to import OllamaClient v2: {e}")
             raise
 
     def test_ollama_client_backward_compatibility(self):
@@ -52,9 +52,9 @@ class TestStage6ThreatExplanation:
             assert hasattr(client, 'get_stats'), "OllamaClient missing get_stats method"
             assert hasattr(client, 'get_model_name'), "OllamaClient missing get_model_name method"
             
-            print("âœ“ OllamaClient has all required methods")
+            print("[OK] OllamaClient has all required methods")
         except Exception as e:
-            print(f"âœ— OllamaClient compatibility check failed: {e}")
+            print(f"[FAIL] OllamaClient compatibility check failed: {e}")
             raise
 
     def test_ollama_stats(self):
@@ -68,9 +68,9 @@ class TestStage6ThreatExplanation:
             assert "model" in stats, "Stats missing 'model'"
             assert "requests" in stats, "Stats missing 'requests'"
             
-            print(f"âœ“ Ollama client stats: {stats}")
+            print(f"[OK] Ollama client stats: {stats}")
         except Exception as e:
-            print(f"âœ— Failed to get Ollama stats: {e}")
+            print(f"[FAIL] Failed to get Ollama stats: {e}")
             raise
 
     def test_threat_explanation_functions_available(self):
@@ -78,9 +78,9 @@ class TestStage6ThreatExplanation:
         try:
             # These functions should exist in the threat explanation module
             import src.services.threat_explanation.explainer as explainer
-            print("âœ“ Threat explainer module imported successfully")
+            print("[OK] Threat explainer module imported successfully")
         except ImportError as e:
-            print(f"âŠ˜ Could not import explainer module (may not be implemented yet): {e}")
+            print(f"[SKIP] Could not import explainer module (may not be implemented yet): {e}")
 
 
 def main():
@@ -114,12 +114,12 @@ def main():
         passed += 1
         
         print("\n" + "=" * 70)
-        print(f"  Results: {passed}/6 passed âœ“")
+        print(f"  Results: {passed}/6 passed [OK]")
         print("=" * 70)
         return True
         
     except Exception as e:
-        print(f"\nâœ— FAILED: {e}")
+        print(f"\n[FAIL] FAILED: {e}")
         import traceback
         traceback.print_exc()
         return False

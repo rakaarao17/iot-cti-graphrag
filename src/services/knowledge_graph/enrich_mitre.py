@@ -1,4 +1,4 @@
-﻿"""
+"""
 Stage 3: MITRE ATT&CK Enrichment.
 
 Maps attack types in the Knowledge Graph to MITRE ATT&CK techniques,
@@ -107,7 +107,7 @@ def get_mitre_summary():
         print("  MITRE ATT&CK Coverage Summary")
         print("=" * 80)
         for r in results:
-            print(f"\n  {r['technique_id']} â€” {r['technique_name']}")
+            print(f"\n  {r['technique_id']} - {r['technique_name']}")
             print(f"  Tactic: {r['tactic']}")
             print(f"  Flows:  {r['total_flows']:,}")
             print(f"  Attack Types: {', '.join(r['attack_types'][:5])}")

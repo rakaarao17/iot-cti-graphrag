@@ -1,4 +1,4 @@
-﻿"""
+"""
 Unit Tests for Stage 3: Knowledge Graph
 
 Tests for Neo4j graph connectivity and operations.
@@ -36,37 +36,37 @@ class TestStage3KnowledgeGraph:
         assert config.NEO4J_USER, "NEO4J_USER not configured"
         assert config.NEO4J_PASSWORD, "NEO4J_PASSWORD not configured"
         
-        print(f"âœ“ Neo4j configured at {config.NEO4J_URI}")
+        print(f"[OK] Neo4j configured at {config.NEO4J_URI}")
 
     def test_adapter_initialization(self):
         """Test that graph adapter can be initialized."""
         if not HAS_NEO4J:
-            print("âŠ˜ SKIPPED: neo4j package not installed")
+            print("[SKIP] SKIPPED: neo4j package not installed")
             return
         
         adapter = get_adapter()
         assert adapter is not None, "Graph adapter is None"
-        print(f"âœ“ Graph adapter initialized: {type(adapter).__name__}")
+        print(f"[OK] Graph adapter initialized: {type(adapter).__name__}")
 
     def test_adapter_stats(self):
         """Test that adapter provides statistics."""
         if not HAS_NEO4J:
-            print("âŠ˜ SKIPPED: neo4j package not installed")
+            print("[SKIP] SKIPPED: neo4j package not installed")
             return
         
         try:
             stats = get_stats()
-            print(f"âœ“ Graph stats retrieved: {stats}")
+            print(f"[OK] Graph stats retrieved: {stats}")
         except GraphError as e:
-            print(f"âŠ˜ Neo4j not running (expected): {e.code}")
+            print(f"[SKIP] Neo4j not running (expected): {e.code}")
         except Exception as e:
-            print(f"âœ— Unexpected error: {e}")
+            print(f"[FAIL] Unexpected error: {e}")
             raise
 
     def test_graph_queries_available(self):
         """Test that graph query functions are available."""
         if not HAS_NEO4J:
-            print("âŠ˜ SKIPPED: neo4j package not installed")
+            print("[SKIP] SKIPPED: neo4j package not installed")
             return
         
         from src.services.knowledge_graph.neo4j_connection_v2 import (
@@ -79,7 +79,7 @@ class TestStage3KnowledgeGraph:
         assert callable(run_write_query), "run_write_query not callable"
         assert callable(run_batch_query), "run_batch_query not callable"
         
-        print("âœ“ All graph query functions available")
+        print("[OK] All graph query functions available")
 
 
 def main():
@@ -109,12 +109,12 @@ def main():
         passed += 1
         
         print("\n" + "=" * 70)
-        print(f"  Results: {passed}/4 passed âœ“")
+        print(f"  Results: {passed}/4 passed [OK]")
         print("=" * 70)
         return True
         
     except Exception as e:
-        print(f"\nâœ— FAILED: {e}")
+        print(f"\n[FAIL] FAILED: {e}")
         import traceback
         traceback.print_exc()
         return False

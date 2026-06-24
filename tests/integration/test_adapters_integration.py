@@ -1,4 +1,4 @@
-﻿"""
+"""
 Integration Tests for Stage Adapters
 
 Tests that the new adapters work correctly with stage modules
@@ -30,7 +30,7 @@ def test_neo4j_adapter_import():
     """Test that Neo4j adapter can be imported and instantiated."""
     print("\n[1/5] Testing Neo4j adapter import...")
     if not HAS_NEO4J:
-        print(f"  âŠ˜ SKIPPED: neo4j package not installed")
+        print(f"  [SKIP] SKIPPED: neo4j package not installed")
         return True  # Skip but don't fail
     
     try:
@@ -40,12 +40,12 @@ def test_neo4j_adapter_import():
             user=config.NEO4J_USER,
             password=config.NEO4J_PASSWORD,
         )
-        print(f"  âœ“ Neo4j adapter initialized for {config.NEO4J_URI}")
+        print(f"  [OK] Neo4j adapter initialized for {config.NEO4J_URI}")
         stats = adapter.get_stats()
-        print(f"  âœ“ Stats: {stats}")
+        print(f"  [OK] Stats: {stats}")
         return True
     except Exception as e:
-        print(f"  âœ— FAILED: {e}")
+        print(f"  [FAIL] FAILED: {e}")
         return False
 
 
@@ -58,12 +58,12 @@ def test_ollama_adapter_initialization():
             endpoint=config.OLLAMA_ENDPOINT,
             model=config.OLLAMA_MODEL,
         )
-        print(f"  âœ“ Ollama adapter initialized for {config.OLLAMA_MODEL}")
+        print(f"  [OK] Ollama adapter initialized for {config.OLLAMA_MODEL}")
         model_name = adapter.get_model_name()
-        print(f"  âœ“ Model: {model_name}")
+        print(f"  [OK] Model: {model_name}")
         return True
     except Exception as e:
-        print(f"  âœ— FAILED: {e}")
+        print(f"  [FAIL] FAILED: {e}")
         return False
 
 
@@ -76,20 +76,20 @@ def test_embedding_adapter_mock():
         # Test single embedding
         embedding = adapter.embed_text("Test text")
         assert len(embedding) == 768, f"Expected 768-dim embedding, got {len(embedding)}"
-        print(f"  âœ“ Single text embedding: {len(embedding)} dimensions")
+        print(f"  [OK] Single text embedding: {len(embedding)} dimensions")
         
         # Test batch embedding
         embeddings = adapter.embed_texts(["Text 1", "Text 2", "Text 3"])
         assert len(embeddings) == 3, f"Expected 3 embeddings, got {len(embeddings)}"
         assert len(embeddings[0]) == 768, f"Expected 768-dim, got {len(embeddings[0])}"
-        print(f"  âœ“ Batch embeddings: {len(embeddings)} texts, {len(embeddings[0])} dimensions each")
+        print(f"  [OK] Batch embeddings: {len(embeddings)} texts, {len(embeddings[0])} dimensions each")
         
         return True
     except AssertionError as e:
-        print(f"  âœ— FAILED: {e}")
+        print(f"  [FAIL] FAILED: {e}")
         return False
     except Exception as e:
-        print(f"  âœ— FAILED: {e}")
+        print(f"  [FAIL] FAILED: {e}")
         return False
 
 
@@ -97,7 +97,7 @@ def test_stage3_neo4j_connection_v2_import():
     """Test that stage3's neo4j_connection_v2 can be imported."""
     print("\n[4/5] Testing stage3 neo4j_connection_v2 import...")
     if not HAS_NEO4J:
-        print(f"  âŠ˜ SKIPPED: neo4j package not installed")
+        print(f"  [SKIP] SKIPPED: neo4j package not installed")
         return True  # Skip but don't fail
     
     try:
@@ -107,23 +107,23 @@ def test_stage3_neo4j_connection_v2_import():
             get_stats,
             run_query,
         )
-        print(f"  âœ“ All functions imported successfully")
+        print(f"  [OK] All functions imported successfully")
         
         # Test get_adapter
         adapter = get_adapter()
-        print(f"  âœ“ Got adapter: {type(adapter).__name__}")
+        print(f"  [OK] Got adapter: {type(adapter).__name__}")
         
         # Test get_stats (should not raise)
         try:
             stats = get_stats()
-            print(f"  âœ“ Got stats: {stats}")
+            print(f"  [OK] Got stats: {stats}")
         except GraphError as e:
             # Expected if Neo4j is not running
-            print(f"  âœ“ GraphError raised as expected (Neo4j may not be running): {e.code}")
+            print(f"  [OK] GraphError raised as expected (Neo4j may not be running): {e.code}")
         
         return True
     except Exception as e:
-        print(f"  âœ— FAILED: {e}")
+        print(f"  [FAIL] FAILED: {e}")
         import traceback
         traceback.print_exc()
         return False
@@ -138,17 +138,17 @@ def test_stage6_ollama_client_v2_import():
             get_adapter,
             test_ollama,
         )
-        print(f"  âœ“ All functions imported successfully")
+        print(f"  [OK] All functions imported successfully")
         
         # Test backward compatibility
         client = OllamaClient()
-        print(f"  âœ“ OllamaClient instantiated (backward compatible)")
-        print(f"  âœ“ Model: {client.model}")
-        print(f"  âœ“ Endpoint: {client.endpoint}")
+        print(f"  [OK] OllamaClient instantiated (backward compatible)")
+        print(f"  [OK] Model: {client.model}")
+        print(f"  [OK] Endpoint: {client.endpoint}")
         
         return True
     except Exception as e:
-        print(f"  âœ— FAILED: {e}")
+        print(f"  [FAIL] FAILED: {e}")
         import traceback
         traceback.print_exc()
         return False

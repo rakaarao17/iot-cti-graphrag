@@ -29,7 +29,7 @@ class TestStage2FeatureExtraction:
         expected_columns = ['src_ip', 'dst_ip', 'protocol', 'src_port', 'dst_port']
         
         found_columns = [col for col in expected_columns if col in df.columns]
-        print(f"✓ Found {len(found_columns)}/{len(expected_columns)} expected columns")
+        print(f"[OK] Found {len(found_columns)}/{len(expected_columns)} expected columns")
         print(f"  Actual columns: {list(df.columns)[:5]}...")
 
     def test_processed_data_exists(self):
@@ -40,7 +40,7 @@ class TestStage2FeatureExtraction:
         processed_files = list(processed_dir.glob("*_features.csv"))
         assert len(processed_files) > 0, f"No processed feature files found in {processed_dir}"
         
-        print(f"✓ Found {len(processed_files)} processed feature files")
+        print(f"[OK] Found {len(processed_files)} processed feature files")
         for f in processed_files[:3]:
             print(f"  - {f.name}")
 
@@ -51,9 +51,9 @@ class TestStage2FeatureExtraction:
         
         if unified_file.exists():
             df = pd.read_csv(unified_file, nrows=10)
-            print(f"✓ Unified features dataset found with {len(df.columns)} columns")
+            print(f"[OK] Unified features dataset found with {len(df.columns)} columns")
         else:
-            print(f"⊘ Unified features dataset not yet created (will be generated in pipeline)")
+            print(f"[SKIP] Unified features dataset not yet created (will be generated in pipeline)")
 
 
 def main():
@@ -75,12 +75,12 @@ def main():
         test.test_unified_features_dataset()
         
         print("\n" + "=" * 70)
-        print("  Results: 3/3 passed ✓")
+        print("  Results: 3/3 passed [OK]")
         print("=" * 70)
         return True
         
     except Exception as e:
-        print(f"\n✗ FAILED: {e}")
+        print(f"\n[FAIL] FAILED: {e}")
         import traceback
         traceback.print_exc()
         return False

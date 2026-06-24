@@ -1,4 +1,4 @@
-﻿"""
+"""
 Unit Tests for Stage 5: GraphRAG
 
 Tests for retrieval augmented generation functionality.
@@ -20,25 +20,25 @@ class TestStage5GraphRAG:
         """Test that RAG pipeline is available."""
         try:
             from src.services.graphrag import rag_pipeline
-            print("âœ“ RAG pipeline module imported successfully")
+            print("[OK] RAG pipeline module imported successfully")
         except ImportError as e:
-            print(f"âŠ˜ Could not import RAG pipeline: {e}")
+            print(f"[SKIP] Could not import RAG pipeline: {e}")
 
     def test_retrievers_available(self):
         """Test that retriever functions are available."""
         try:
             from src.services.graphrag import retrievers
-            print("âœ“ Retrievers module imported successfully")
+            print("[OK] Retrievers module imported successfully")
         except ImportError as e:
-            print(f"âŠ˜ Could not import retrievers: {e}")
+            print(f"[SKIP] Could not import retrievers: {e}")
 
     def test_vector_store_available(self):
         """Test that vector store is available."""
         try:
             from src.services.graphrag import vector_store
-            print("âœ“ Vector store module imported successfully")
+            print("[OK] Vector store module imported successfully")
         except ImportError as e:
-            print(f"âŠ˜ Could not import vector store: {e}")
+            print(f"[SKIP] Could not import vector store: {e}")
 
     def test_embedding_config_for_rag(self):
         """Test that embedding configuration supports RAG."""
@@ -47,7 +47,7 @@ class TestStage5GraphRAG:
         assert config.EMBEDDING_DIMENSION > 0, "Embedding dimension must be positive"
         assert config.EMBEDDINGS_MODEL, "Embeddings model not configured"
         
-        print(f"âœ“ RAG embedding config: model={config.EMBEDDINGS_MODEL}, dim={config.EMBEDDING_DIMENSION}")
+        print(f"[OK] RAG embedding config: model={config.EMBEDDINGS_MODEL}, dim={config.EMBEDDING_DIMENSION}")
 
 
 def main():
@@ -77,12 +77,12 @@ def main():
         passed += 1
         
         print("\n" + "=" * 70)
-        print(f"  Results: {passed}/4 passed âœ“")
+        print(f"  Results: {passed}/4 passed [OK]")
         print("=" * 70)
         return True
         
     except Exception as e:
-        print(f"\nâœ— FAILED: {e}")
+        print(f"\n[FAIL] FAILED: {e}")
         import traceback
         traceback.print_exc()
         return False

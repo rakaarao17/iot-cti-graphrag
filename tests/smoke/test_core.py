@@ -35,10 +35,10 @@ def test_import_integrity():
     for module_name in modules_to_import:
         try:
             importlib.import_module(module_name)
-            print(f"  ✓ {module_name}")
+            print(f"  [OK] {module_name}")
         except Exception as e:
             errors.append((module_name, str(e)))
-            print(f"  ✗ {module_name}: {e}")
+            print(f"  [FAIL] {module_name}: {e}")
     
     if errors:
         raise AssertionError(f"Import failed for {len(errors)} module(s):\n" + 
@@ -152,7 +152,7 @@ if __name__ == "__main__":
             test_func()
             passed += 1
         except Exception as e:
-            print(f"  ✗ {test_func.__name__}: {e}\n")
+            print(f"  [FAIL] {test_func.__name__}: {e}\n")
             failed += 1
     
     print("=" * 60)

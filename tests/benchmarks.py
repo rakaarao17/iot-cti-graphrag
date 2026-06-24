@@ -43,7 +43,7 @@ class PerformanceBenchmarks:
         ops_per_sec = len(prompts) / elapsed
         self.results.append(("LLM generation", elapsed))
         
-        print(f"✓ LLM: Generated {len(prompts)} texts in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
+        print(f"[OK] LLM: Generated {len(prompts)} texts in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
         return elapsed
 
     def benchmark_embedding_generation(self, texts_count: int = 1000) -> float:
@@ -62,7 +62,7 @@ class PerformanceBenchmarks:
         ops_per_sec = len(texts) / elapsed
         self.results.append(("Embedding generation", elapsed))
         
-        print(f"✓ Embeddings: Generated {len(embeddings)} embeddings in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
+        print(f"[OK] Embeddings: Generated {len(embeddings)} embeddings in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
         return elapsed
 
     def benchmark_graph_queries(self, query_count: int = 1000) -> float:
@@ -82,7 +82,7 @@ class PerformanceBenchmarks:
         ops_per_sec = len(queries) / elapsed
         self.results.append(("Graph queries", elapsed))
         
-        print(f"✓ Graph: Executed {len(queries)} queries in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
+        print(f"[OK] Graph: Executed {len(queries)} queries in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
         return elapsed
 
     def benchmark_config_initialization(self, iterations: int = 1000) -> float:
@@ -95,7 +95,7 @@ class PerformanceBenchmarks:
         ops_per_sec = iterations / elapsed
         self.results.append(("Config init", elapsed))
         
-        print(f"✓ Config: Initialized {iterations} times in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
+        print(f"[OK] Config: Initialized {iterations} times in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
         return elapsed
 
     def benchmark_adapter_initialization(self, iterations: int = 1000) -> float:
@@ -110,7 +110,7 @@ class PerformanceBenchmarks:
         ops_per_sec = (iterations * 3) / elapsed
         self.results.append(("Adapter init", elapsed))
         
-        print(f"✓ Adapters: Initialized {iterations * 3} adapters in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
+        print(f"[OK] Adapters: Initialized {iterations * 3} adapters in {elapsed:.2f}s ({ops_per_sec:.0f} ops/sec)")
         return elapsed
 
     def benchmark_end_to_end_pipeline(self, iterations: int = 10) -> float:
@@ -131,7 +131,7 @@ class PerformanceBenchmarks:
         ops_per_sec = iterations / elapsed
         self.results.append(("End-to-end pipeline", elapsed))
         
-        print(f"✓ E2E: Completed {iterations} pipeline iterations in {elapsed:.2f}s ({ops_per_sec:.1f} iter/sec)")
+        print(f"[OK] E2E: Completed {iterations} pipeline iterations in {elapsed:.2f}s ({ops_per_sec:.1f} iter/sec)")
         return elapsed
 
     def print_summary(self):
@@ -143,13 +143,13 @@ class PerformanceBenchmarks:
         total_time = sum(elapsed for _, elapsed in self.results)
         
         print(f"\n{'Operation':<30} {'Time (s)':<12} {'% of Total':<10}")
-        print("─" * 70)
+        print("-" * 70)
         
         for op_name, elapsed in sorted(self.results, key=lambda x: x[1], reverse=True):
             pct = (elapsed / total_time * 100) if total_time > 0 else 0
             print(f"{op_name:<30} {elapsed:<12.4f} {pct:<10.1f}%")
         
-        print("─" * 70)
+        print("-" * 70)
         print(f"{'Total':<30} {total_time:<12.4f} {'100.0':<10}%")
         print("=" * 70)
 
