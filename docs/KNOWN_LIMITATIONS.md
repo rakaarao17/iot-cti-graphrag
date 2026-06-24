@@ -11,7 +11,7 @@ This document explicitly lists remaining limitations and workarounds for the Gra
 **Limitation:** The system currently supports only local Ollama instances for LLM inference.
 
 **Details:**
-- Google Gemini embeddings are used, but generative inference is Ollama-only
+- Text embeddings run locally (sentence-transformers, all-MiniLM-L6-v2, 384-dim); generative inference is Ollama-only
 - Port abstraction (LLMPort) allows swapping, but only OllamaAdapter is implemented
 - OpenAI/Claude support would require new adapter implementations
 
@@ -262,6 +262,22 @@ This document explicitly lists remaining limitations and workarounds for the Gra
 
 ---
 
+### 11. Dual Configuration Sources
+
+**Status:** Documented (future work)
+**Scope:** `config/` (root) and `src/core/config.py`
+**Limitation:** Settings are read from two places — the pipeline services and scripts
+use the root `config/` package, while the adapters and tests use `src/core/config.py`.
+
+**Why:** Side effect of layering the Ports & Adapters structure over the original
+script-based pipeline. Both work; there is no runtime conflict.
+
+**To Make It Real:** Unify on a single config source (`src/core/config.py`) and update
+the ~30 service/script imports. Deferred to avoid regression risk near submission.
+See [docs/decisions/0007-dual-config-coexistence.md](decisions/0007-dual-config-coexistence.md).
+
+---
+
 ## Summary
 
 | # | Category | Severity | Status |
@@ -276,5 +292,6 @@ This document explicitly lists remaining limitations and workarounds for the Gra
 | 8 | .env Commit Risk | LOW | Standard Practice |
 | 9 | Hardcoded Default Password | LOW | Development Only |
 | 10 | VRAM Offloading | LOW | Trade-Off |
+| 11 | Dual Config Sources | LOW | Documented |
 
 **Overall Assessment:** All limitations are documented, none are *deceptive*. The system is honest about what it does and doesn't do.
