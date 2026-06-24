@@ -1,0 +1,24 @@
+# Core dependencies
+neo4j>=5.0
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.4.0
+xgboost>=2.0.0
+tqdm>=4.65
+python-dotenv>=1.0
+requests>=2.31
+
+# Local text embeddings (no API key required)
+sentence-transformers>=2.7.0
+
+# Neo4j GraphRAG
+neo4j-graphrag>=1.0
+
+# Graph embeddings (pure Python, no Neo4j GDS needed)
+graspologic>=3.3
+networkx>=3.1
+node2vec>=0.4.6
+
+# Utilities
+tabulate>=0.9
+colorama>=0.4
