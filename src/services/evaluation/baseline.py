@@ -49,10 +49,12 @@ def train_xgboost_baseline(
     """
     available_features = [c for c in feature_cols if c in train_df.columns]
 
-    X_train = train_df[available_features].fillna(0).values
+    # Replace inf/-inf (e.g. from divide-by-zero in rate/ratio features) with NaN
+    # so the fillna(0) below catches them; raw inf crashes XGBoost's DMatrix.
+    X_train = train_df[available_features].replace([np.inf, -np.inf], np.nan).fillna(0).values
     y_train_raw = train_df[label_col].values
 
-    X_test = test_df[available_features].fillna(0).values
+    X_test = test_df[available_features].replace([np.inf, -np.inf], np.nan).fillna(0).values
     y_test_raw = test_df[label_col].values
 
     le = LabelEncoder()
