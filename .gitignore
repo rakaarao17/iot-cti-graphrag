@@ -56,6 +56,10 @@ build/
 data/neo4j/
 dump.rdb
 
+# Large datasets (regenerable; too big for GitHub) -- keep data/samples/ + data/eval/
+data/raw/
+data/processed/
+
 # Test coverage
 .coverage
 htmlcov/
