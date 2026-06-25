@@ -1,0 +1,1502 @@
+[
+  {
+    "query_id": "q001",
+    "retrieval_type": "device_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 1.0,
+    "answer_tokens": 66,
+    "gen_latency_ms": 11068.2,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q001",
+    "retrieval_type": "device_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 0.8,
+    "coherence": 0.906,
+    "answer_tokens": 63,
+    "gen_latency_ms": 6279.6,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q001",
+    "retrieval_type": "device_lookup",
+    "condition": "combined",
+    "grounding_ratio": 0.667,
+    "coherence": 0.975,
+    "answer_tokens": 78,
+    "gen_latency_ms": 6714.0,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q002",
+    "retrieval_type": "relationship_traversal",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 1.0,
+    "answer_tokens": 64,
+    "gen_latency_ms": 5116.0,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q002",
+    "retrieval_type": "relationship_traversal",
+    "condition": "vector_only",
+    "grounding_ratio": 0.6,
+    "coherence": 1.0,
+    "answer_tokens": 127,
+    "gen_latency_ms": 7107.9,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q002",
+    "retrieval_type": "relationship_traversal",
+    "condition": "combined",
+    "grounding_ratio": 0.0,
+    "coherence": 1.0,
+    "answer_tokens": 85,
+    "gen_latency_ms": 6194.1,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q003",
+    "retrieval_type": "mitre_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.667,
+    "coherence": 0.98,
+    "answer_tokens": 45,
+    "gen_latency_ms": 4751.1,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q003",
+    "retrieval_type": "mitre_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.983,
+    "answer_tokens": 53,
+    "gen_latency_ms": 5663.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q003",
+    "retrieval_type": "mitre_lookup",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.976,
+    "answer_tokens": 79,
+    "gen_latency_ms": 7395.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q004",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.667,
+    "coherence": 0.939,
+    "answer_tokens": 67,
+    "gen_latency_ms": 6261.0,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q004",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.952,
+    "answer_tokens": 63,
+    "gen_latency_ms": 5709.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q004",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.954,
+    "answer_tokens": 136,
+    "gen_latency_ms": 9041.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q005",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.667,
+    "coherence": 0.887,
+    "answer_tokens": 62,
+    "gen_latency_ms": 6387.8,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q005",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.912,
+    "answer_tokens": 121,
+    "gen_latency_ms": 9088.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q005",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.944,
+    "answer_tokens": 69,
+    "gen_latency_ms": 7059.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q006",
+    "retrieval_type": "device_ranking",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.989,
+    "answer_tokens": 91,
+    "gen_latency_ms": 5048.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q006",
+    "retrieval_type": "device_ranking",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.992,
+    "answer_tokens": 259,
+    "gen_latency_ms": 11320.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q006",
+    "retrieval_type": "device_ranking",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.985,
+    "answer_tokens": 335,
+    "gen_latency_ms": 18034.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q007",
+    "retrieval_type": "mitre_tactic",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.5,
+    "coherence": 0.968,
+    "answer_tokens": 63,
+    "gen_latency_ms": 6188.0,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q007",
+    "retrieval_type": "mitre_tactic",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.977,
+    "answer_tokens": 40,
+    "gen_latency_ms": 5005.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q007",
+    "retrieval_type": "mitre_tactic",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.951,
+    "answer_tokens": 98,
+    "gen_latency_ms": 7838.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q008",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.963,
+    "answer_tokens": 362,
+    "gen_latency_ms": 20565.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q008",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.928,
+    "answer_tokens": 62,
+    "gen_latency_ms": 6267.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q008",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.959,
+    "answer_tokens": 78,
+    "gen_latency_ms": 6463.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q009",
+    "retrieval_type": "attack_device_join",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.971,
+    "answer_tokens": 103,
+    "gen_latency_ms": 6140.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q009",
+    "retrieval_type": "attack_device_join",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 46,
+    "gen_latency_ms": 6324.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q009",
+    "retrieval_type": "attack_device_join",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.99,
+    "answer_tokens": 105,
+    "gen_latency_ms": 8091.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q010",
+    "retrieval_type": "mitre_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.973,
+    "answer_tokens": 33,
+    "gen_latency_ms": 4865.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q010",
+    "retrieval_type": "mitre_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.975,
+    "answer_tokens": 40,
+    "gen_latency_ms": 4703.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q010",
+    "retrieval_type": "mitre_lookup",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.949,
+    "answer_tokens": 38,
+    "gen_latency_ms": 5052.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q011",
+    "retrieval_type": "dataset_comparison",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.989,
+    "answer_tokens": 95,
+    "gen_latency_ms": 6152.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q011",
+    "retrieval_type": "dataset_comparison",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 244,
+    "gen_latency_ms": 12509.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q011",
+    "retrieval_type": "dataset_comparison",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 231,
+    "gen_latency_ms": 13274.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q012",
+    "retrieval_type": "device_ranking",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.985,
+    "answer_tokens": 128,
+    "gen_latency_ms": 6916.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q012",
+    "retrieval_type": "device_ranking",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.975,
+    "answer_tokens": 82,
+    "gen_latency_ms": 5497.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q012",
+    "retrieval_type": "device_ranking",
+    "condition": "combined",
+    "grounding_ratio": 0.875,
+    "coherence": 0.955,
+    "answer_tokens": 166,
+    "gen_latency_ms": 9821.2,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q013",
+    "retrieval_type": "mitre_tactic",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.75,
+    "coherence": 0.972,
+    "answer_tokens": 69,
+    "gen_latency_ms": 5644.9,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q013",
+    "retrieval_type": "mitre_tactic",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.982,
+    "answer_tokens": 117,
+    "gen_latency_ms": 7293.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q013",
+    "retrieval_type": "mitre_tactic",
+    "condition": "combined",
+    "grounding_ratio": 0.667,
+    "coherence": 0.985,
+    "answer_tokens": 69,
+    "gen_latency_ms": 6388.6,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q014",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.952,
+    "answer_tokens": 63,
+    "gen_latency_ms": 4857.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q014",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 0.667,
+    "coherence": 0.935,
+    "answer_tokens": 103,
+    "gen_latency_ms": 7108.2,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q014",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.939,
+    "answer_tokens": 65,
+    "gen_latency_ms": 5610.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q015",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 1.0,
+    "answer_tokens": 101,
+    "gen_latency_ms": 5426.1,
+    "n_ungrounded": 6
+  },
+  {
+    "query_id": "q015",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 0.75,
+    "coherence": 0.964,
+    "answer_tokens": 235,
+    "gen_latency_ms": 10627.7,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q015",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 0.8,
+    "coherence": 0.973,
+    "answer_tokens": 199,
+    "gen_latency_ms": 10111.0,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q016",
+    "retrieval_type": "device_ranking",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 56,
+    "gen_latency_ms": 4069.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q016",
+    "retrieval_type": "device_ranking",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.986,
+    "answer_tokens": 74,
+    "gen_latency_ms": 5457.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q016",
+    "retrieval_type": "device_ranking",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 88,
+    "gen_latency_ms": 6886.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q017",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.667,
+    "coherence": 0.98,
+    "answer_tokens": 52,
+    "gen_latency_ms": 4659.5,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q017",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 0.667,
+    "coherence": 0.952,
+    "answer_tokens": 62,
+    "gen_latency_ms": 5593.1,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q017",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.975,
+    "answer_tokens": 81,
+    "gen_latency_ms": 6888.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q018",
+    "retrieval_type": "mitre_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.857,
+    "coherence": 0.94,
+    "answer_tokens": 79,
+    "gen_latency_ms": 6078.1,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q018",
+    "retrieval_type": "mitre_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.976,
+    "answer_tokens": 43,
+    "gen_latency_ms": 5536.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q018",
+    "retrieval_type": "mitre_lookup",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.968,
+    "answer_tokens": 97,
+    "gen_latency_ms": 7884.9,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q019",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 37,
+    "gen_latency_ms": 4098.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q019",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.951,
+    "answer_tokens": 232,
+    "gen_latency_ms": 15817.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q019",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 62,
+    "gen_latency_ms": 5752.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q020",
+    "retrieval_type": "relationship_traversal",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 1.0,
+    "answer_tokens": 79,
+    "gen_latency_ms": 5083.3,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q020",
+    "retrieval_type": "relationship_traversal",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.962,
+    "answer_tokens": 109,
+    "gen_latency_ms": 7843.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q020",
+    "retrieval_type": "relationship_traversal",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 81,
+    "gen_latency_ms": 6577.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q021",
+    "retrieval_type": "attack_device_join",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.966,
+    "answer_tokens": 59,
+    "gen_latency_ms": 5329.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q021",
+    "retrieval_type": "attack_device_join",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.979,
+    "answer_tokens": 46,
+    "gen_latency_ms": 5545.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q021",
+    "retrieval_type": "attack_device_join",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.963,
+    "answer_tokens": 26,
+    "gen_latency_ms": 5363.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q022",
+    "retrieval_type": "mitre_tactic",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.25,
+    "coherence": 0.987,
+    "answer_tokens": 156,
+    "gen_latency_ms": 7660.5,
+    "n_ungrounded": 3
+  },
+  {
+    "query_id": "q022",
+    "retrieval_type": "mitre_tactic",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 95,
+    "gen_latency_ms": 6150.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q022",
+    "retrieval_type": "mitre_tactic",
+    "condition": "combined",
+    "grounding_ratio": 0.0,
+    "coherence": 0.97,
+    "answer_tokens": 137,
+    "gen_latency_ms": 8702.6,
+    "n_ungrounded": 4
+  },
+  {
+    "query_id": "q023",
+    "retrieval_type": "device_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.984,
+    "answer_tokens": 65,
+    "gen_latency_ms": 4662.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q023",
+    "retrieval_type": "device_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.979,
+    "answer_tokens": 155,
+    "gen_latency_ms": 8685.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q023",
+    "retrieval_type": "device_lookup",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.978,
+    "answer_tokens": 92,
+    "gen_latency_ms": 6943.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q024",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 121,
+    "gen_latency_ms": 6690.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q024",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.983,
+    "answer_tokens": 60,
+    "gen_latency_ms": 4882.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q024",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 70,
+    "gen_latency_ms": 6070.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q025",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.667,
+    "coherence": 0.966,
+    "answer_tokens": 124,
+    "gen_latency_ms": 7444.6,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q025",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.962,
+    "answer_tokens": 49,
+    "gen_latency_ms": 4665.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q025",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.959,
+    "answer_tokens": 260,
+    "gen_latency_ms": 16270.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q026",
+    "retrieval_type": "mitre_tactic",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 0.986,
+    "answer_tokens": 275,
+    "gen_latency_ms": 10357.9,
+    "n_ungrounded": 6
+  },
+  {
+    "query_id": "q026",
+    "retrieval_type": "mitre_tactic",
+    "condition": "vector_only",
+    "grounding_ratio": 0.875,
+    "coherence": 0.966,
+    "answer_tokens": 148,
+    "gen_latency_ms": 8968.2,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q026",
+    "retrieval_type": "mitre_tactic",
+    "condition": "combined",
+    "grounding_ratio": 0.5,
+    "coherence": 0.985,
+    "answer_tokens": 338,
+    "gen_latency_ms": 17469.1,
+    "n_ungrounded": 8
+  },
+  {
+    "query_id": "q027",
+    "retrieval_type": "device_ranking",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 63,
+    "gen_latency_ms": 5170.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q027",
+    "retrieval_type": "device_ranking",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 133,
+    "gen_latency_ms": 6772.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q027",
+    "retrieval_type": "device_ranking",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.976,
+    "answer_tokens": 46,
+    "gen_latency_ms": 5977.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q028",
+    "retrieval_type": "mitre_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.5,
+    "coherence": 0.981,
+    "answer_tokens": 107,
+    "gen_latency_ms": 5978.2,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q028",
+    "retrieval_type": "mitre_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.992,
+    "answer_tokens": 122,
+    "gen_latency_ms": 6911.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q028",
+    "retrieval_type": "mitre_lookup",
+    "condition": "combined",
+    "grounding_ratio": 0.667,
+    "coherence": 0.983,
+    "answer_tokens": 59,
+    "gen_latency_ms": 5636.2,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q029",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 1.0,
+    "answer_tokens": 111,
+    "gen_latency_ms": 6693.1,
+    "n_ungrounded": 3
+  },
+  {
+    "query_id": "q029",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 0.833,
+    "coherence": 0.974,
+    "answer_tokens": 376,
+    "gen_latency_ms": 18641.9,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q029",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.99,
+    "answer_tokens": 198,
+    "gen_latency_ms": 11289.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q030",
+    "retrieval_type": "device_ranking",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 1.0,
+    "answer_tokens": 63,
+    "gen_latency_ms": 4940.0,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q030",
+    "retrieval_type": "device_ranking",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 54,
+    "gen_latency_ms": 4638.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q030",
+    "retrieval_type": "device_ranking",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.992,
+    "answer_tokens": 127,
+    "gen_latency_ms": 7963.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q031",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.956,
+    "answer_tokens": 90,
+    "gen_latency_ms": 5018.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q031",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 0.143,
+    "coherence": 0.951,
+    "answer_tokens": 169,
+    "gen_latency_ms": 9151.9,
+    "n_ungrounded": 6
+  },
+  {
+    "query_id": "q031",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 0.714,
+    "coherence": 0.955,
+    "answer_tokens": 113,
+    "gen_latency_ms": 7704.6,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q032",
+    "retrieval_type": "mitre_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 0.988,
+    "answer_tokens": 84,
+    "gen_latency_ms": 5332.1,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q032",
+    "retrieval_type": "mitre_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 0.0,
+    "coherence": 0.969,
+    "answer_tokens": 100,
+    "gen_latency_ms": 6393.7,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q032",
+    "retrieval_type": "mitre_lookup",
+    "condition": "combined",
+    "grounding_ratio": 0.0,
+    "coherence": 0.965,
+    "answer_tokens": 55,
+    "gen_latency_ms": 5684.2,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q033",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.995,
+    "answer_tokens": 392,
+    "gen_latency_ms": 13200.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q033",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 55,
+    "gen_latency_ms": 5431.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q033",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.979,
+    "answer_tokens": 136,
+    "gen_latency_ms": 11040.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q034",
+    "retrieval_type": "attack_device_join",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 58,
+    "gen_latency_ms": 5084.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q034",
+    "retrieval_type": "attack_device_join",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.974,
+    "answer_tokens": 77,
+    "gen_latency_ms": 5904.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q034",
+    "retrieval_type": "attack_device_join",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 59,
+    "gen_latency_ms": 5430.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q035",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.667,
+    "coherence": 0.952,
+    "answer_tokens": 138,
+    "gen_latency_ms": 8283.8,
+    "n_ungrounded": 2
+  },
+  {
+    "query_id": "q035",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.962,
+    "answer_tokens": 140,
+    "gen_latency_ms": 7950.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q035",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.942,
+    "answer_tokens": 89,
+    "gen_latency_ms": 6664.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q036",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.953,
+    "answer_tokens": 67,
+    "gen_latency_ms": 5145.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q036",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.959,
+    "answer_tokens": 73,
+    "gen_latency_ms": 6165.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q036",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 0.833,
+    "coherence": 0.964,
+    "answer_tokens": 113,
+    "gen_latency_ms": 8362.5,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q037",
+    "retrieval_type": "device_ranking",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.833,
+    "coherence": 0.98,
+    "answer_tokens": 98,
+    "gen_latency_ms": 6441.9,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q037",
+    "retrieval_type": "device_ranking",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 158,
+    "gen_latency_ms": 8393.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q037",
+    "retrieval_type": "device_ranking",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 77,
+    "gen_latency_ms": 6012.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q038",
+    "retrieval_type": "mitre_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.989,
+    "answer_tokens": 91,
+    "gen_latency_ms": 6726.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q038",
+    "retrieval_type": "mitre_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.974,
+    "answer_tokens": 164,
+    "gen_latency_ms": 12634.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q038",
+    "retrieval_type": "mitre_lookup",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.973,
+    "answer_tokens": 112,
+    "gen_latency_ms": 9865.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q039",
+    "retrieval_type": "relationship_traversal",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 72,
+    "gen_latency_ms": 5167.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q039",
+    "retrieval_type": "relationship_traversal",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 68,
+    "gen_latency_ms": 5078.9,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q039",
+    "retrieval_type": "relationship_traversal",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.981,
+    "answer_tokens": 173,
+    "gen_latency_ms": 10236.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q040",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 107,
+    "gen_latency_ms": 7629.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q040",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.987,
+    "answer_tokens": 79,
+    "gen_latency_ms": 6570.9,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q040",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.985,
+    "answer_tokens": 72,
+    "gen_latency_ms": 6997.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q041",
+    "retrieval_type": "dataset_comparison",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 85,
+    "gen_latency_ms": 5825.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q041",
+    "retrieval_type": "dataset_comparison",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.982,
+    "answer_tokens": 163,
+    "gen_latency_ms": 8918.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q041",
+    "retrieval_type": "dataset_comparison",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.992,
+    "answer_tokens": 257,
+    "gen_latency_ms": 13841.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q042",
+    "retrieval_type": "mitre_tactic",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.98,
+    "answer_tokens": 49,
+    "gen_latency_ms": 5091.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q042",
+    "retrieval_type": "mitre_tactic",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.968,
+    "answer_tokens": 28,
+    "gen_latency_ms": 4803.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q042",
+    "retrieval_type": "mitre_tactic",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.961,
+    "answer_tokens": 52,
+    "gen_latency_ms": 5440.4,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q043",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 168,
+    "gen_latency_ms": 7134.1,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q043",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 105,
+    "gen_latency_ms": 5967.6,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q043",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.986,
+    "answer_tokens": 82,
+    "gen_latency_ms": 6358.9,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q044",
+    "retrieval_type": "attack_device_join",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.957,
+    "answer_tokens": 52,
+    "gen_latency_ms": 4942.9,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q044",
+    "retrieval_type": "attack_device_join",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.973,
+    "answer_tokens": 75,
+    "gen_latency_ms": 5574.9,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q044",
+    "retrieval_type": "attack_device_join",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.95,
+    "answer_tokens": 77,
+    "gen_latency_ms": 6255.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q045",
+    "retrieval_type": "mitre_tactic",
+    "condition": "cypher_only",
+    "grounding_ratio": 0.0,
+    "coherence": 1.0,
+    "answer_tokens": 107,
+    "gen_latency_ms": 6344.0,
+    "n_ungrounded": 5
+  },
+  {
+    "query_id": "q045",
+    "retrieval_type": "mitre_tactic",
+    "condition": "vector_only",
+    "grounding_ratio": 0.889,
+    "coherence": 0.981,
+    "answer_tokens": 300,
+    "gen_latency_ms": 17001.6,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q045",
+    "retrieval_type": "mitre_tactic",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.974,
+    "answer_tokens": 274,
+    "gen_latency_ms": 15376.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q046",
+    "retrieval_type": "aggregation",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.968,
+    "answer_tokens": 747,
+    "gen_latency_ms": 31841.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q046",
+    "retrieval_type": "aggregation",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.977,
+    "answer_tokens": 41,
+    "gen_latency_ms": 5645.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q046",
+    "retrieval_type": "aggregation",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.93,
+    "answer_tokens": 76,
+    "gen_latency_ms": 9478.7,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q047",
+    "retrieval_type": "device_ranking",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.98,
+    "answer_tokens": 50,
+    "gen_latency_ms": 4534.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q047",
+    "retrieval_type": "device_ranking",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.983,
+    "answer_tokens": 110,
+    "gen_latency_ms": 6888.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q047",
+    "retrieval_type": "device_ranking",
+    "condition": "combined",
+    "grounding_ratio": 0.833,
+    "coherence": 0.985,
+    "answer_tokens": 349,
+    "gen_latency_ms": 15558.0,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q048",
+    "retrieval_type": "dataset_comparison",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.981,
+    "answer_tokens": 57,
+    "gen_latency_ms": 5267.2,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q048",
+    "retrieval_type": "dataset_comparison",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.975,
+    "answer_tokens": 80,
+    "gen_latency_ms": 6086.5,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q048",
+    "retrieval_type": "dataset_comparison",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.984,
+    "answer_tokens": 193,
+    "gen_latency_ms": 11242.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q049",
+    "retrieval_type": "attack_description",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.959,
+    "answer_tokens": 98,
+    "gen_latency_ms": 6079.8,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q049",
+    "retrieval_type": "attack_description",
+    "condition": "vector_only",
+    "grounding_ratio": 0.8,
+    "coherence": 0.978,
+    "answer_tokens": 185,
+    "gen_latency_ms": 10587.6,
+    "n_ungrounded": 1
+  },
+  {
+    "query_id": "q049",
+    "retrieval_type": "attack_description",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 1.0,
+    "answer_tokens": 94,
+    "gen_latency_ms": 6842.9,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q050",
+    "retrieval_type": "mitre_lookup",
+    "condition": "cypher_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.953,
+    "answer_tokens": 63,
+    "gen_latency_ms": 4947.3,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q050",
+    "retrieval_type": "mitre_lookup",
+    "condition": "vector_only",
+    "grounding_ratio": 1.0,
+    "coherence": 0.963,
+    "answer_tokens": 163,
+    "gen_latency_ms": 9753.0,
+    "n_ungrounded": 0
+  },
+  {
+    "query_id": "q050",
+    "retrieval_type": "mitre_lookup",
+    "condition": "combined",
+    "grounding_ratio": 1.0,
+    "coherence": 0.96,
+    "answer_tokens": 100,
+    "gen_latency_ms": 7618.5,
+    "n_ungrounded": 0
+  }
+]
