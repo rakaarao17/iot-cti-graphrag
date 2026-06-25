@@ -1,9 +1,23 @@
-# ADR-0007: Accept Dual Configuration Sources (config/ and src/core/config.py)
+# ADR-0007: Unify Configuration Sources (config/ and src/core/config.py)
 
-Status:     Accepted
-Date:       2026-06-23
-North Star: Keep the working thesis pipeline stable while documenting a known
-            architectural seam honestly, rather than risking a wide refactor near submission.
+Status:     Implemented (2026-06-25; supersedes the original "defer" decision of 2026-06-23)
+Date:       2026-06-23 (deferred) -> 2026-06-25 (implemented post-submission)
+North Star: A single, validated source of truth for configuration, achieved without
+            changing any value the evaluation pipeline was run with.
+
+## Update (2026-06-25) -- Implemented
+`src/core/config.py` (`Config` / `get_config()`) is now the **single canonical source**.
+`config/settings.py` derives every shared value from `get_config()` and retains only
+pipeline-only constants (node2vec params, dataset URLs, sampling, `logger`). All ~30
+existing `from config.settings import X` call sites are unchanged.
+
+**Zero result drift, enforced by a test.** The pipeline previously ran with literal
+`LLM_TEMPERATURE=0.3` and `LLM_MAX_TOKENS=4096` in `settings.py`, while `Config` defaulted
+to `0.7`/`2048` (and `.env.example` documented the latter). The proven pipeline values
+(temp 0.3, max_tokens 4096, model `gemma4:e2b`, 384-dim local embeddings) are now the
+canonical defaults and are pinned in `.env.example`. `tests/unit/test_config_unified.py`
+asserts (a) settings == Config for all shared keys and (b) the proven values are preserved,
+so any future drift fails CI. Verified: full suite 8/8.
 
 ## Context
 The codebase reads runtime configuration from two distinct sources:
@@ -17,9 +31,10 @@ This split is a side effect of layering the Ports & Adapters structure (ADR-0001
 ADR-0005) on top of the original script-based pipeline. Both configs currently work;
 there is no runtime conflict, only duplication of where settings live.
 
-## Decision
-Leave both configuration sources in place for now and document the seam. We do **not**
-unify them at this time.
+## Original Decision (2026-06-23, now superseded)
+Leave both configuration sources in place near submission and document the seam, rather
+than risk a wide refactor. This was the right call pre-submission; post-submission it was
+implemented as described in the Update above.
 
 ## Alternatives
 - Unify everything into `src/core/config.py` now — rejected: ~30 files import the root

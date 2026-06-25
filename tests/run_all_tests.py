@@ -43,7 +43,8 @@ def main():
     test_suites = [
         # Smoke tests (quick validation)
         (project_root / "tests" / "smoke" / "test_core.py", "Smoke: Core Architecture"),
-        
+        (project_root / "tests" / "unit" / "test_config_unified.py", "Unit: Config Unification (ADR-0007)"),
+
         # Unit tests for each stage
         (project_root / "tests" / "unit" / "test_stage1_data_acquisition.py", "Unit: Stage 1 - Data Acquisition"),
         (project_root / "tests" / "unit" / "test_stage2_feature_extraction.py", "Unit: Stage 2 - Feature Extraction"),

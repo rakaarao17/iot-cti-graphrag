@@ -83,19 +83,19 @@ class Config:
         """Validate all required fields are present."""
         errors: Dict[str, str] = {}
         
-        # Required fields
-        self.NEO4J_URI = os.getenv("NEO4J_URI", "").strip()
+        # Core fields (sensible local defaults so import never crashes; override via .env)
+        self.NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687").strip()
         if not self.NEO4J_URI:
             errors["NEO4J_URI"] = "Required environment variable missing"
-        
-        self.NEO4J_USER = os.getenv("NEO4J_USER", "").strip()
+
+        self.NEO4J_USER = os.getenv("NEO4J_USER", "neo4j").strip()
         if not self.NEO4J_USER:
             errors["NEO4J_USER"] = "Required environment variable missing"
-        
-        self.NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "").strip()
+
+        self.NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "password").strip()
         if not self.NEO4J_PASSWORD:
             errors["NEO4J_PASSWORD"] = "Required environment variable missing"
-        
+
         self.NEO4J_DATABASE = os.getenv("NEO4J_DATABASE", "iot").strip()
         self.NEO4J_POOL_SIZE = int(os.getenv("NEO4J_POOL_SIZE", "20"))
         self.NEO4J_MAX_RETRIES = int(os.getenv("NEO4J_MAX_RETRIES", "3"))
@@ -107,16 +107,18 @@ class Config:
         # Support both OLLAMA_API_URL (new adapter) and OLLAMA_ENDPOINT (old)
         self.OLLAMA_API_URL = os.getenv("OLLAMA_API_URL", "http://localhost:11434/api")
         self.OLLAMA_ENDPOINT = os.getenv("OLLAMA_ENDPOINT", "http://localhost:11434/api/generate")
-        self.OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma:4b")
-        
-        # Embedding configuration
-        self.EMBEDDINGS_MODEL = os.getenv("EMBEDDINGS_MODEL", "models/embedding-001")
+        # Defaults below match the values the evaluation pipeline actually ran with
+        # (previously only in config/settings.py) -- see ADR-0007.
+        self.OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma4:e2b")
+
+        # Embedding configuration (local sentence-transformers; no API key)
+        self.EMBEDDINGS_MODEL = os.getenv("EMBEDDINGS_MODEL", "all-MiniLM-L6-v2")
         self.EMBEDDING_DIMENSION = int(os.getenv("EMBEDDING_DIMENSION", "384"))
         self.EMBEDDING_BATCH_SIZE = int(os.getenv("EMBEDDING_BATCH_SIZE", "100"))
-        
-        # LLM parameters
-        self.LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.7"))
-        self.LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "2048"))
+
+        # LLM parameters (match the evaluated pipeline)
+        self.LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.3"))
+        self.LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "4096"))
         self.LLM_TIMEOUT_SECONDS = int(os.getenv("LLM_TIMEOUT_SECONDS", "300"))
         
         self.LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
