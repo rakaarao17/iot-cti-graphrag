@@ -1,0 +1,542 @@
+[
+  {
+    "q": 1,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 0.75,
+    "coherence": 0.985,
+    "words": 202,
+    "eff_grounding": 0.75
+  },
+  {
+    "q": 2,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.962,
+    "words": 98,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 3,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.955,
+    "words": 262,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 4,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.991,
+    "words": 113,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 5,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 0.75,
+    "coherence": 0.994,
+    "words": 179,
+    "eff_grounding": 0.75
+  },
+  {
+    "q": 6,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 198,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 7,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.99,
+    "words": 298,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 8,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.983,
+    "words": 354,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 9,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.977,
+    "words": 129,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 10,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.984,
+    "words": 84,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 11,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 0.75,
+    "coherence": 0.987,
+    "words": 153,
+    "eff_grounding": 0.75
+  },
+  {
+    "q": 12,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.99,
+    "words": 105,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 13,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.986,
+    "words": 218,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 14,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.977,
+    "words": 93,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 15,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 0.75,
+    "coherence": 0.995,
+    "words": 177,
+    "eff_grounding": 0.75
+  },
+  {
+    "q": 16,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.988,
+    "words": 81,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 17,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 179,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 18,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.959,
+    "words": 371,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 19,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 0.714,
+    "coherence": 0.956,
+    "words": 85,
+    "eff_grounding": 0.714
+  },
+  {
+    "q": 20,
+    "model": "phi3:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 87,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 1,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.939,
+    "words": 474,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 2,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 4,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 3,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 3,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 4,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 4,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 5,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.92,
+    "words": 970,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 6,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 57,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 7,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 0.75,
+    "coherence": 0.968,
+    "words": 780,
+    "eff_grounding": 0.75
+  },
+  {
+    "q": 8,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 0.864,
+    "words": 16,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 9,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.947,
+    "words": 853,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 10,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 31,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 11,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 1,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 12,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 2,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 13,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 0.923,
+    "words": 13,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 14,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 0.667,
+    "coherence": 0.965,
+    "words": 930,
+    "eff_grounding": 0.667
+  },
+  {
+    "q": 15,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 0.667,
+    "coherence": 0.979,
+    "words": 1523,
+    "eff_grounding": 0.667
+  },
+  {
+    "q": 16,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.979,
+    "words": 48,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 17,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 21,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 18,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.967,
+    "words": 410,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 19,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 2,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 20,
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.962,
+    "words": 861,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 1,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 0.0,
+    "coherence": 1.0,
+    "words": 57,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 2,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.982,
+    "words": 59,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 3,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.949,
+    "words": 131,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 4,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.987,
+    "words": 86,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 5,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 51,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 6,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 76,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 7,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.989,
+    "words": 88,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 8,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.909,
+    "words": 39,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 9,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 60,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 10,
+    "model": "gemma4:e2b",
+    "usable": false,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 16,
+    "eff_grounding": 0.0
+  },
+  {
+    "q": 11,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 57,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 12,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 23,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 13,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.976,
+    "words": 86,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 14,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 31,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 15,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.976,
+    "words": 123,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 16,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.939,
+    "words": 44,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 17,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.984,
+    "words": 86,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 18,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.955,
+    "words": 67,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 19,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 0.96,
+    "words": 70,
+    "eff_grounding": 1.0
+  },
+  {
+    "q": 20,
+    "model": "gemma4:e2b",
+    "usable": true,
+    "grounding": 1.0,
+    "coherence": 1.0,
+    "words": 52,
+    "eff_grounding": 1.0
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "phi3:latest": {
+    "usable_rate": 1.0,
+    "mean_eff_grounding": 0.936,
+    "mean_grounding_all": 0.936,
+    "mean_coherence": 0.983,
+    "mean_words": 173.3,
+    "n": 20
+  },
+  "zeroday-phi3-ciciot-v2:latest": {
+    "usable_rate": 0.6,
+    "mean_eff_grounding": 0.554,
+    "mean_grounding_all": 0.954,
+    "mean_coherence": 0.971,
+    "mean_words": 350.2,
+    "n": 20
+  },
+  "gemma4:e2b": {
+    "usable_rate": 0.95,
+    "mean_eff_grounding": 0.9,
+    "mean_grounding_all": 0.95,
+    "mean_coherence": 0.98,
+    "mean_words": 65.1,
+    "n": 20
+  }
+}

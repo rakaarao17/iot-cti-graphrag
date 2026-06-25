@@ -61,10 +61,13 @@ def main():
 
     rows = []
     t0 = time.time()
-    for qi, rec in enumerate(picks, 1):
-        ctx = rec.get("context_text", "")
-        prompt = PROMPT.format(context=ctx[:6000], query=rec["query"])
-        for model in MODELS:
+    # model-outer loop: with OLLAMA_MAX_LOADED_MODELS=1 this loads each model once
+    # (run all queries) instead of reloading on every query.
+    for model in MODELS:
+        print(f"== {model} ==")
+        for qi, rec in enumerate(picks, 1):
+            ctx = rec.get("context_text", "")
+            prompt = PROMPT.format(context=ctx[:6000], query=rec["query"])
             try:
                 ans = chat(model, prompt)
             except Exception as e:
@@ -77,7 +80,7 @@ def main():
             rows.append({"q": qi, "model": model, "usable": usable,
                          "grounding": round(grounding, 3), "coherence": coh, "words": words,
                          "eff_grounding": round(grounding, 3) if usable else 0.0})
-        print(f"  [{qi}/{len(picks)}] done ({time.time()-t0:.0f}s)")
+            print(f"  [{qi}/{len(picks)}] {model.split(':')[0]} ({time.time()-t0:.0f}s)")
     Path("data/eval/corrected_comparison_raw.json").write_text(json.dumps(rows, indent=2), encoding="utf-8")
 
     # per-model aggregate
