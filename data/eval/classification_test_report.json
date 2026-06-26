@@ -1,0 +1,17 @@
+{
+  "phi3:latest": {
+    "accuracy": 0.133,
+    "valid_label_rate": 1.0,
+    "n": 30
+  },
+  "zeroday-phi3-ciciot-v2:latest": {
+    "accuracy": 0.1,
+    "valid_label_rate": 1.0,
+    "n": 30
+  },
+  "gemma4:e2b": {
+    "accuracy": 0.0,
+    "valid_label_rate": 0.0,
+    "n": 30
+  }
+}

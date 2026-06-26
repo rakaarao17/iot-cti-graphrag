@@ -1,0 +1,114 @@
+"""Classification test: the fine-tuned model's HOME TURF.
+
+The explanation comparison judged the models on writing prose (a generation task),
+where the classifier fine-tune (zeroday) loses. This test judges them on the task
+zeroday was actually built for: given a flow's features, name the attack type.
+
+For N stratified flows from the CICIoT sample (with ground-truth labels), each model
+is asked to pick exactly one attack type from the candidate list. We score:
+  - accuracy        : predicted label matches the true label
+  - valid_label_rate: the model returned an actual attack-type name (not prose)
+
+Expectation: zeroday >= general models here, completing the honest picture
+(fine-tuned wins at its trained task; general wins at explanation).
+Writes data/eval/classification_test_report.{md,json}. Ollama required.
+Run: python scripts/run_classification_test.py
+"""
+import json
+import re
+import sys
+import time
+from pathlib import Path
+
+import requests
+import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+MODELS = ["phi3:latest", "zeroday-phi3-ciciot-v2:latest", "gemma4:e2b"]
+N = 30
+SAMPLE = Path("data/samples/ciciot2023_sample.csv")
+CHAT_URL = "http://localhost:11434/api/chat"
+OPTS = {"temperature": 0.0, "num_predict": 40}
+FEAT = ["protocol", "service", "duration", "orig_bytes", "resp_bytes",
+        "orig_pkts", "resp_pkts", "conn_state", "src_port", "dst_port"]
+
+
+def norm(s):
+    return re.sub(r"[^a-z0-9]", "", str(s).lower())
+
+
+def chat(model, prompt):
+    r = requests.post(CHAT_URL, json={"model": model, "stream": False, "options": OPTS,
+                                      "messages": [{"role": "user", "content": prompt}]}, timeout=300)
+    return r.json().get("message", {}).get("content", "")
+
+
+def main():
+    df = pd.read_csv(SAMPLE, low_memory=False)
+    labels = sorted(df["label"].dropna().unique())
+    # stratified-ish: up to N rows spread across labels (manual loop keeps 'label' a column)
+    per = max(1, N // len(labels))
+    parts = [grp.sample(min(len(grp), per), random_state=42) for _, grp in df.groupby("label")]
+    picks = pd.concat(parts).sample(frac=1, random_state=42).head(N).reset_index(drop=True)
+    cand = ", ".join(labels)
+    print(f"Classification test: {len(picks)} flows x {len(MODELS)} models | {len(labels)} candidate classes")
+
+    rows = []
+    t0 = time.time()
+    for model in MODELS:
+        print(f"== {model} ==")
+        correct = valid = 0
+        for i, (_, r) in enumerate(picks.iterrows(), 1):
+            feats = "\n".join(f"  {c} = {r[c]}" for c in FEAT if c in r and pd.notna(r[c]))
+            prompt = (f"You are an IoT network-attack classifier. Classify the flow below into exactly "
+                      f"ONE of these attack types:\n{cand}\n\nFlow features:\n{feats}\n\n"
+                      f"Answer with ONLY the attack type name, nothing else.")
+            try:
+                ans = chat(model, prompt).strip()
+            except Exception as e:
+                ans = ""
+            true = r["label"]
+            na = norm(ans)
+            is_valid = any(norm(l) in na or na in norm(l) for l in labels) if na else False
+            is_correct = bool(na) and (norm(true) in na or na in norm(true))
+            correct += is_correct; valid += is_valid
+            rows.append({"model": model, "true": true, "pred": ans[:60],
+                         "correct": is_correct, "valid_label": is_valid})
+        n = len(picks)
+        print(f"   accuracy={correct/n:.2f}  valid_label_rate={valid/n:.2f}  ({time.time()-t0:.0f}s)")
+
+    # aggregate
+    summary = {}
+    for m in MODELS:
+        sub = [x for x in rows if x["model"] == m]
+        summary[m] = {"accuracy": round(sum(x["correct"] for x in sub)/len(sub), 3),
+                      "valid_label_rate": round(sum(x["valid_label"] for x in sub)/len(sub), 3),
+                      "n": len(sub)}
+    Path("data/eval/classification_test_raw.json").write_text(json.dumps(rows, indent=2), encoding="utf-8")
+    Path("data/eval/classification_test_report.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+
+    md = ["# Classification Test (the fine-tuned model's intended task)", "",
+          f"**Task:** name the attack type for a flow (closed set of {len(labels)} classes).  "
+          f"**Flows:** {len(picks)}  **Mode:** /api/chat.", "",
+          "Counterpart to the explanation comparison. Here zeroday-phi3 is judged on what it was "
+          "fine-tuned for (classification), not on writing prose.", "",
+          "| Model | Accuracy | Valid-label rate |", "|-------|----------|------------------|"]
+    for m in MODELS:
+        s = summary[m]
+        md.append(f"| {m} | {s['accuracy']:.2f} | {s['valid_label_rate']:.2f} |")
+    md += ["", "*accuracy* = predicted label matches ground truth; *valid-label rate* = the model "
+           "returned an actual attack-type name (not prose).", "",
+           "_Generated by scripts/run_classification_test.py_"]
+    Path("data/eval/classification_test_report.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+
+    print("\n=== CLASSIFICATION SUMMARY ===")
+    for m in MODELS:
+        s = summary[m]
+        print(f"  {m:34s} accuracy={s['accuracy']:.2f}  valid_label={s['valid_label_rate']:.2f}")
+    print(f"\nSaved classification_test_report.{{md,json}}  ({time.time()-t0:.0f}s)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
