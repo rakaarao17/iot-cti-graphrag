@@ -1,0 +1,422 @@
+[
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "Benign",
+    "pred": "Benign",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "Benign",
+    "pred": "BrowserHijacking",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "Benign",
+    "pred": "Benign",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-TCP_Flood",
+    "pred": "DDoS-TCP_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-TCP_Flood",
+    "pred": "DDoS-TCP_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-TCP_Flood",
+    "pred": "DDoS-TCP_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-ICMP_Flood",
+    "pred": "DDoS-TCP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-ICMP_Flood",
+    "pred": "DDoS-TCP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-ICMP_Flood",
+    "pred": "DDoS-TCP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-SYN_Flood",
+    "pred": "DDoS-SYN_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-SYN_Flood",
+    "pred": "DDoS-SYN_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-SYN_Flood",
+    "pred": "DDoS-SYN_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-UDP_Flood",
+    "pred": "DDoS-UDP_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-UDP_Flood",
+    "pred": "DDoS-UDP_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-UDP_Flood",
+    "pred": "DDoS-UDP_Flood",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DNS_Spoofing",
+    "pred": "BrowserHijacking",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DNS_Spoofing",
+    "pred": "BrowserHijacking",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DNS_Spoofing",
+    "pred": "DDoS-UDP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "Backdoor_Malware",
+    "pred": "DDoS-UDP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "Backdoor_Malware",
+    "pred": "BrowserHijacking",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "Backdoor_Malware",
+    "pred": "DDoS-UDP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DictionaryBruteForce",
+    "pred": "BrowserHijacking",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DictionaryBruteForce",
+    "pred": "BrowserHijacking",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DictionaryBruteForce",
+    "pred": "BrowserHijacking",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-SlowLoris",
+    "pred": "DDoS-TCP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-SlowLoris",
+    "pred": "DDoS-TCP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "DDoS-SlowLoris",
+    "pred": "DDoS-TCP_Flood",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "BrowserHijacking",
+    "pred": "BrowserHijacking",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "BrowserHijacking",
+    "pred": "BrowserHijacking",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "zeroday-phi3-ciciot-v2:latest",
+    "true": "BrowserHijacking",
+    "pred": "BrowserHijacking",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "Benign",
+    "pred": "DDoS-TCP_Flood - The high rate (401.36) and the",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "Benign",
+    "pred": "DDoS-UDP_Flood - The high rate of flow (289) and t",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "Benign",
+    "pred": "DDoS-TCP_Flood - The high rate of TCP packets (Rat",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-TCP_Flood",
+    "pred": "DDoS-TCP_Flood - The high rate (78988.775",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-TCP_Flood",
+    "pred": "DDoS-TCP_Flood - The high rate (94872.291",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-TCP_Flood",
+    "pred": "DDoS-TCP_Flood - The high rate of TCP packets (Rat",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-ICMP_Flood",
+    "pred": "DDoS-ICMP_Flood - The features indicate a high rat",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-ICMP_Flood",
+    "pred": "DDoS-ICMP_Flood - The features indicate a high rat",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-ICMP_Flood",
+    "pred": "DDoS-ICMP_Flood - The Protocol Type of ICMP and th",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-SYN_Flood",
+    "pred": "DDoS-SYN_Flood - The high SYN flag number and the ",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-SYN_Flood",
+    "pred": "DDoS-SYN_Flood - The high rate of SYN flags (syn_f",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-SYN_Flood",
+    "pred": "DDoS-SYN_Flood - The high syn_flag_number and the ",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-UDP_Flood",
+    "pred": "DDoS-UDP_Flood - The high rate of UDP traffic (431",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-UDP_Flood",
+    "pred": "DDoS-UDP_Flood - The high UDP rate and the absence",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-UDP_Flood",
+    "pred": "DDoS-UDP_Flood - The high rate of UDP traffic (99%",
+    "correct": true,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DNS_Spoofing",
+    "pred": "DDoS-UDP_Flood - The high rate of UDP traffic (201",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DNS_Spoofing",
+    "pred": "DDoS-UDP_Flood - The high UDP rate (1646) and the",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DNS_Spoofing",
+    "pred": "DDoS-UDP_Flood - The high UDP rate (111.464",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "Backdoor_Malware",
+    "pred": "DDoS-TCP_Flood - The high rate of TCP packets (40%",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "Backdoor_Malware",
+    "pred": "DDoS-UDP_Flood - The high rate of UDP traffic (79.",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "Backdoor_Malware",
+    "pred": "DDoS-UDP_Flood - The high rate of UDP traffic (85.",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DictionaryBruteForce",
+    "pred": "DDoS-SYN_Flood - The high rate of TCP connections ",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DictionaryBruteForce",
+    "pred": "DDoS-UDP_Flood - The high UDP rate (90%) and the a",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DictionaryBruteForce",
+    "pred": "DDoS-TCP_Flood - The high rate of TCP packets (Rat",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-SlowLoris",
+    "pred": "DDoS-TCP_Flood - The high rate of TCP packets (63.",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-SlowLoris",
+    "pred": "DDoS-TCP_Flood - The high rate of TCP packets (Rat",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "DDoS-SlowLoris",
+    "pred": "DDoS-TCP_Flood - The high rate (2551.528)",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "BrowserHijacking",
+    "pred": "DDoS-UDP_Flood - The high rate of UDP packets (45.",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "BrowserHijacking",
+    "pred": "DDoS-TCP_Flood - The high rate (3413.0555",
+    "correct": false,
+    "valid": true
+  },
+  {
+    "model": "phi3:latest",
+    "true": "BrowserHijacking",
+    "pred": "DDoS-TCP_Flood - The high rate (1408.05) and",
+    "correct": false,
+    "valid": true
+  }
+]

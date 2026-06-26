@@ -1,0 +1,12 @@
+{
+  "zeroday-phi3-ciciot-v2:latest": {
+    "accuracy": 0.467,
+    "valid_label_rate": 1.0,
+    "n": 30
+  },
+  "phi3:latest": {
+    "accuracy": 0.4,
+    "valid_label_rate": 1.0,
+    "n": 30
+  }
+}
